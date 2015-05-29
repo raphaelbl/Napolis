@@ -6,6 +6,8 @@
 
 package napolis;
 
+import java.awt.BorderLayout;
+
 /**
  *
  * @author 631410026
@@ -74,6 +76,11 @@ public class NapolisApp extends javax.swing.JFrame {
 
         cutMenuItem.setMnemonic('t');
         cutMenuItem.setText("Pizza mais vendida");
+        cutMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cutMenuItemActionPerformed(evt);
+            }
+        });
         editMenu.add(cutMenuItem);
 
         menuBar.add(editMenu);
@@ -110,6 +117,12 @@ public class NapolisApp extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+
+    private void cutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cutMenuItemActionPerformed
+        GerarRelatorioBoundary b = new GerarRelatorioBoundary();
+        this.getContentPane().setLayout(new BorderLayout());
+        this.getContentPane().add(b);
+    }//GEN-LAST:event_cutMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
