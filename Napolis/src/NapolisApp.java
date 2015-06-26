@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 
-package napolis;
-
 import java.awt.BorderLayout;
 
 /**
@@ -38,6 +36,8 @@ public class NapolisApp extends javax.swing.JFrame {
         exitMenuItem = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
         cutMenuItem = new javax.swing.JMenuItem();
+        checkMenu = new javax.swing.JMenu();
+        cutMenuItem1 = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
         contentsMenuItem = new javax.swing.JMenuItem();
         aboutMenuItem = new javax.swing.JMenuItem();
@@ -85,6 +85,20 @@ public class NapolisApp extends javax.swing.JFrame {
 
         menuBar.add(editMenu);
 
+        checkMenu.setMnemonic('e');
+        checkMenu.setText("Checar Pedidos");
+
+        cutMenuItem1.setMnemonic('t');
+        cutMenuItem1.setText("Checar Pedidos Abertos");
+        cutMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cutMenuItem1ActionPerformed(evt);
+            }
+        });
+        checkMenu.add(cutMenuItem1);
+
+        menuBar.add(checkMenu);
+
         helpMenu.setMnemonic('h');
         helpMenu.setText("Help");
 
@@ -124,6 +138,11 @@ public class NapolisApp extends javax.swing.JFrame {
         this.getContentPane().add(b);
     }//GEN-LAST:event_cutMenuItemActionPerformed
 
+    private void cutMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cutMenuItem1ActionPerformed
+        frmChecarPedidos checar = new frmChecarPedidos();
+        checar.setVisible(true);
+    }//GEN-LAST:event_cutMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -161,8 +180,10 @@ public class NapolisApp extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
+    private javax.swing.JMenu checkMenu;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
+    private javax.swing.JMenuItem cutMenuItem1;
     private javax.swing.JMenu editMenu;
     private javax.swing.JMenuItem exitMenuItem;
     private javax.swing.JMenu fileMenu;
